@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/gta/api-pix/:path*",
+      "destination": "/api/gta/api-pix/:path*"
+    }
+  ]
+}
