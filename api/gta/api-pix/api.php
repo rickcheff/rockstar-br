@@ -153,7 +153,7 @@ curl_setopt_array($ch, [
 $resposta   = curl_exec($ch);
 $httpStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $curlErro   = curl_error($ch);
-curl_close($ch);
+@curl_close($ch);
 
 $data = json_decode($resposta, true);
 way_log('PIX - RESPOSTA MANGOFY', ['http' => $httpStatus, 'curl_err' => $curlErro ?: null, 'body' => $data]);

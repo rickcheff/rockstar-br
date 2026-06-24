@@ -20,7 +20,7 @@ curl_setopt_array($ch, [
 $body   = curl_exec($ch);
 $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $err    = curl_error($ch);
-curl_close($ch);
+@curl_close($ch);
 
 if ($err) { http_response_code(502); echo json_encode(['error' => $err]); exit; }
 http_response_code($status);

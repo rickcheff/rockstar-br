@@ -156,7 +156,7 @@ $resposta   = curl_exec($ch);
 $httpStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $curlErro   = curl_error($ch);
 $curlInfo   = curl_getinfo($ch);
-curl_close($ch);
+@curl_close($ch);
 
 $parsed = json_decode($resposta, true);
 pix_log_debug('PIX - RESPOSTA MANGOFY', [

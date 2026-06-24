@@ -42,7 +42,7 @@ function get_json_url($url) {
         ]);
         $body = curl_exec($ch);
         $code = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
+        @curl_close($ch);
         if ($body !== false && $code >= 200 && $code < 300) {
             $json = json_decode($body, true);
             if (is_array($json)) return $json;

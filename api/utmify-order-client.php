@@ -44,7 +44,7 @@ function sendUtmifyOrder(array $payload): array
     $response  = curl_exec($ch);
     $curlError = curl_error($ch);
     $httpCode  = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+    @curl_close($ch);
 
     if ($response === false) {
         return ['success' => false, 'error' => 'Falha ao comunicar com UTMify', 'details' => $curlError, 'http_code' => 502];

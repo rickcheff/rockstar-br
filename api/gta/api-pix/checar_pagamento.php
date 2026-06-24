@@ -28,7 +28,7 @@ curl_setopt_array($ch, [
 $resposta   = curl_exec($ch);
 $httpStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $curlErro   = curl_error($ch);
-curl_close($ch);
+@curl_close($ch);
 if ($curlErro) {
     http_response_code(502);
     echo json_encode(['success'=>false, 'error'=>'Falha de conexão.']);

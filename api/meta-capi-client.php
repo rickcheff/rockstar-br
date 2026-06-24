@@ -123,7 +123,7 @@ function sendMetaCapiEvent(array $input): array
     $response  = curl_exec($ch);
     $curlError = curl_error($ch);
     $httpCode  = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+    @curl_close($ch);
 
     if ($response === false) {
         return ['success' => false, 'error' => 'Falha ao comunicar com a Meta', 'details' => $curlError, 'http_code' => 502, 'event_id' => $eventId, 'event_name' => $eventName];
