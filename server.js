@@ -5,6 +5,9 @@ const url = require('url');
 
 const PORT = 3500;
 
+// Armazenar PIXs gerados (em memória)
+const payments = {};
+
 const server = http.createServer((req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
@@ -28,8 +31,22 @@ const server = http.createServer((req, res) => {
     });
     req.on('end', () => {
       try {
+        console.log('Raw body:', body);
+        if (!body || body.trim() === '') {
+          res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ success: false, erro: 'Dados inválidos. Body vazio.' }));
+          return;
+        }
+
         const data = JSON.parse(body);
         console.log('PIX Request:', data);
+
+        // Aceita tanto 'value' quanto 'valor'
+        const valueStr = data.value || data.valor || '0';
+        const valueInReais = parseFloat(valueStr) || 0;
+        const valueInCents = Math.round(valueInReais * 100);
+
+        console.log('Value conversion:', { valueStr, valueInReais, valueInCents });
 
         // Simular resposta Mangofy com código PIX realista
         const txId = 'PIX' + Date.now() + Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -38,7 +55,7 @@ const server = http.createServer((req, res) => {
         const pixCode = '00020126580014br.gov.bcb.pix0136' +
                        'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' +
                        '52040000530398654061' +
-                       Math.round(data.value * 100).toString().padStart(10, '0') +
+                       valueInCents.toString().padStart(10, '0') +
                        '5303986540612345678901234567890123456789012345678901234567';
 
         const response = {
@@ -46,23 +63,43 @@ const server = http.createServer((req, res) => {
           sucesso: true,
           payment_code: txId,
           status: 'pending',
-          valor: Math.round(data.value * 100),
+          valor: valueInCents,
+          pix_copia_cola: pixCode,
+          pix_qrcode_url: `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(pixCode)}`,
           data: {
             id: txId,
             transactionId: txId,
-            valor: data.value,
+            valor: valueInReais.toFixed(2),
+            copiaecola: pixCode,
+            qrcode_image: `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(pixCode)}`,
             status: 'pending',
-            pix_code: pixCode
+            pix_code: pixCode,
+            customer: {
+              name: data.nome || data.name || 'N/A',
+              email: data.email || 'N/A',
+              cpf: data.cpf || data.document || 'N/A',
+              phone: data.telefone || data.phone || 'N/A'
+            }
           }
+        };
+
+        // Armazenar o pagamento como "pending"
+        payments[txId] = {
+          status: 'pending',
+          createdAt: Date.now(),
+          data: data
         };
 
         console.log('PIX Response:', response);
         res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify(response, null, 2));
       } catch (e) {
-        console.error('Erro ao processar PIX:', e);
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: false, erro: 'Dados inválidos' }));
+        console.error('Erro ao processar PIX:', e.message);
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({
+          success: false,
+          erro: 'Dados inválidos. Erro: ' + e.message
+        }));
       }
     });
     return;
@@ -73,15 +110,35 @@ const server = http.createServer((req, res) => {
     const code = parsedUrl.query.code || parsedUrl.query.id;
     console.log('Check payment:', code);
 
+    // Consultar o status do pagamento armazenado
+    let status = 'pending';
+
+    if (payments[code]) {
+      // Se o pagamento foi gerado há mais de 10 segundos, simular como "paid"
+      const ageInSeconds = (Date.now() - payments[code].createdAt) / 1000;
+      if (ageInSeconds > 10) {
+        // 70% de chance de estar pago após 10 segundos
+        status = Math.random() < 0.7 ? 'paid' : 'pending';
+      } else {
+        status = 'pending';
+      }
+      // Atualizar o status armazenado
+      payments[code].status = status;
+    } else {
+      // Se não encontrou, retornar como pending
+      status = 'pending';
+    }
+
     const response = {
       success: true,
       data: {
         id: code,
         transactionId: code,
-        status: 'paid'
+        status: status
       }
     };
 
+    console.log('Payment status:', response.data.status, '(Age:', payments[code] ? Math.round((Date.now() - payments[code].createdAt) / 1000) + 's' : '?' + ')');
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
     res.end(JSON.stringify(response));
     return;

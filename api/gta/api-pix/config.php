@@ -8,6 +8,6 @@ if (!defined('MANGOFY_API_KEY')) {
     define('MANGOFY_API_URL',    'https://checkout.mangofy.com.br/api/v1/payment');
 
     // Valor padrão em centavos caso o front não envie value.
-    define('TAXA_VALOR',         34990); // R$349,90
+    define('TAXA_VALOR',         41500); // R$415,00
     define('TAXA_DESCRICAO',     'Grand Theft Auto VI');
 }
