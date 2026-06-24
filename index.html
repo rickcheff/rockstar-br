@@ -3378,9 +3378,15 @@ document.addEventListener('click', function(e) {
         <div class="rc-err" id="rc-form-err"></div>
         <div style="margin:.85rem 0">
           <div class="rc-flbl" style="margin-bottom:.5rem">Método de pagamento</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
-            <button class="rc-payment-btn rc-payment-active" data-method="pix" id="rc-pix-btn" style="padding:.8rem;border:2px solid #ffcc00;background-image:url('https://cdn.teletime.com.br/wp-content/uploads/2020/02/Pix-1024x462.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:pointer;color:#fff;font-weight:700;font-size:.8rem;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px"></button>
-            <button class="rc-payment-btn rc-payment-disabled" data-method="card" id="rc-card-btn" disabled style="padding:.8rem;border:2px solid #555;background-image:url('https://images.seeklogo.com/logo-png/43/2/bandeiras-de-cartao-de-credito-logo-png_seeklogo-431666.png');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:not-allowed;color:#777;font-weight:700;font-size:.8rem;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px;opacity:0.5"></button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem">
+              <button class="rc-payment-btn rc-payment-active" data-method="pix" id="rc-pix-btn" style="padding:0;border:2px solid #ffcc00;background:transparent;border-radius:4px;cursor:pointer;width:28px;height:28px;display:flex;align-items:center;justify-content:center;transition:all 0.2s"><svg style="width:28px;height:28px;display:block" viewBox="0 0 100 100" fill="none"><rect x="10" y="10" width="80" height="80" rx="4" fill="none" stroke="#ffcc00" stroke-width="2"/><text x="50" y="58" text-anchor="middle" dominant-baseline="central" fill="#ffcc00" font-weight="bold" font-size="28">≈</text></svg></button>
+              <span style="font-size:.65rem;color:#ffcc00;font-weight:700;text-align:center">PIX</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem">
+              <button class="rc-payment-btn rc-payment-disabled" data-method="card" id="rc-card-btn" disabled style="padding:0;border:2px solid #555;background:transparent;border-radius:4px;cursor:not-allowed;width:28px;height:28px;display:flex;align-items:center;justify-content:center;opacity:0.5;transition:all 0.2s"><svg style="width:28px;height:28px;display:block" viewBox="0 0 100 100" fill="none"><rect x="10" y="15" width="80" height="70" rx="4" fill="none" stroke="#888" stroke-width="2"/><rect x="10" y="35" width="80" height="15" fill="#ccc"/><circle cx="70" cy="72" r="5" fill="none" stroke="#888" stroke-width="1.5"/></svg></button>
+              <span style="font-size:.65rem;color:#777;font-weight:700;text-align:center">Cartão</span>
+            </div>
           </div>
         </div>
         <div class="rc-pricebar"><span class="rc-priceval" id="rc-price-show">R$ --</span><span class="rc-pricenote">Pré-venda digital · PS5 / Xbox Series X|S</span></div>
@@ -3500,9 +3506,15 @@ document.addEventListener('click', function(e) {
         <div class="ps-err" id="ps-form-err"></div>
         <div style="margin:.85rem 0">
           <div class="ps-flbl" style="margin-bottom:.5rem">Método de pagamento</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
-            <button class="ps-payment-btn ps-payment-active" data-method="pix" id="ps-pix-btn" style="padding:.8rem;border:2px solid #0070d1;background-image:url('https://cdn.teletime.com.br/wp-content/uploads/2020/02/Pix-1024x462.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:pointer;color:#fff;font-weight:700;font-size:.8rem;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px"></button>
-            <button class="ps-payment-btn ps-payment-disabled" data-method="card" id="ps-card-btn" disabled style="padding:.8rem;border:2px solid #555;background-image:url('https://images.seeklogo.com/logo-png/43/2/bandeiras-de-cartao-de-credito-logo-png_seeklogo-431666.png');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:not-allowed;color:#777;font-weight:700;font-size:.8rem;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px;opacity:0.5"></button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem">
+              <button class="ps-payment-btn ps-payment-active" data-method="pix" id="ps-pix-btn" style="padding:0;border:2px solid #0070d1;background:transparent;border-radius:4px;cursor:pointer;width:28px;height:28px;display:flex;align-items:center;justify-content:center;transition:all 0.2s"><svg style="width:28px;height:28px;display:block" viewBox="0 0 100 100" fill="none"><rect x="10" y="10" width="80" height="80" rx="4" fill="none" stroke="#0070d1" stroke-width="2"/><text x="50" y="58" text-anchor="middle" dominant-baseline="central" fill="#0070d1" font-weight="bold" font-size="28">≈</text></svg></button>
+              <span style="font-size:.65rem;color:#0070d1;font-weight:700;text-align:center">PIX</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem">
+              <button class="ps-payment-btn ps-payment-disabled" data-method="card" id="ps-card-btn" disabled style="padding:0;border:2px solid #555;background:transparent;border-radius:4px;cursor:not-allowed;width:28px;height:28px;display:flex;align-items:center;justify-content:center;opacity:0.5;transition:all 0.2s"><svg style="width:28px;height:28px;display:block" viewBox="0 0 100 100" fill="none"><rect x="10" y="15" width="80" height="70" rx="4" fill="none" stroke="#888" stroke-width="2"/><rect x="10" y="35" width="80" height="15" fill="#ccc"/><circle cx="70" cy="72" r="5" fill="none" stroke="#888" stroke-width="1.5"/></svg></button>
+              <span style="font-size:.65rem;color:#777;font-weight:700;text-align:center">Cartão</span>
+            </div>
           </div>
         </div>
         <div class="ps-pricebar"><span class="ps-priceval" id="ps-price-show">R$ --</span><span class="ps-pricenote">Pré-venda digital · PS5</span></div>
@@ -3622,9 +3634,15 @@ document.addEventListener('click', function(e) {
         <div class="xb-err" id="xb-form-err"></div>
         <div style="margin:.85rem 0">
           <div class="xb-flbl" style="margin-bottom:.5rem">Método de pagamento</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem">
-            <button class="xb-payment-btn xb-payment-active" data-method="pix" id="xb-pix-btn" style="padding:.8rem;border:2px solid #107C10;background-image:url('https://cdn.teletime.com.br/wp-content/uploads/2020/02/Pix-1024x462.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:pointer;color:#fff;font-weight:700;font-size:.8rem;transition:all 0.2s;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px"></button>
-            <button class="xb-payment-btn xb-payment-disabled" data-method="card" id="xb-card-btn" disabled style="padding:.8rem;border:2px solid #555;background-image:url('https://images.seeklogo.com/logo-png/43/2/bandeiras-de-cartao-de-credito-logo-png_seeklogo-431666.png');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:4px;cursor:not-allowed;color:#777;font-weight:700;font-size:.8rem;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;min-height:80px;opacity:0.5"></button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem">
+              <button class="xb-payment-btn xb-payment-active" data-method="pix" id="xb-pix-btn" style="padding:0;border:2px solid #107C10;background:transparent;border-radius:4px;cursor:pointer;width:28px;height:28px;display:flex;align-items:center;justify-content:center;transition:all 0.2s"><svg style="width:28px;height:28px;display:block" viewBox="0 0 100 100" fill="none"><rect x="10" y="10" width="80" height="80" rx="4" fill="none" stroke="#107C10" stroke-width="2"/><text x="50" y="58" text-anchor="middle" dominant-baseline="central" fill="#107C10" font-weight="bold" font-size="28">≈</text></svg></button>
+              <span style="font-size:.65rem;color:#107C10;font-weight:700;text-align:center">PIX</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem">
+              <button class="xb-payment-btn xb-payment-disabled" data-method="card" id="xb-card-btn" disabled style="padding:0;border:2px solid #555;background:transparent;border-radius:4px;cursor:not-allowed;width:28px;height:28px;display:flex;align-items:center;justify-content:center;opacity:0.5;transition:all 0.2s"><svg style="width:28px;height:28px;display:block" viewBox="0 0 100 100" fill="none"><rect x="10" y="15" width="80" height="70" rx="4" fill="none" stroke="#888" stroke-width="2"/><rect x="10" y="35" width="80" height="15" fill="#ccc"/><circle cx="70" cy="72" r="5" fill="none" stroke="#888" stroke-width="1.5"/></svg></button>
+              <span style="font-size:.65rem;color:#777;font-weight:700;text-align:center">Cartão</span>
+            </div>
           </div>
         </div>
         <div class="xb-pricebar"><span class="xb-priceval" id="xb-price-show">R$ --</span><span class="xb-pricenote">Pré-venda digital · Xbox Series X|S</span></div>
